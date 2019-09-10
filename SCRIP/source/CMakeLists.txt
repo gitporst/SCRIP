@@ -1,6 +1,6 @@
 set (LIB_NAME SCRIP)
 
-find_package(OpenMP REQUIRED)
+#find_package(OpenMP REQUIRED)
 
 #find_package(MPI)
 #if (${MPI_Fortran_FOUND})
@@ -54,7 +54,9 @@ if(CMAKE_ABSOFT)
     target_compile_definitions(${LIB_NAME} PRIVATE "-DABSOFT")
 endif()
 if(CMAKE_Fortran_COMPILER_ID MATCHES "NAG")
-	target_compile_options(${LIB_NAME} PUBLIC  "-kind=byte")
+	# -kind=byte is for netcdf library
+	# -u=sharing is for openmp
+	target_compile_options(${LIB_NAME} PUBLIC  "-kind=byte;-u=sharing")
 endif()
 
 set_target_properties ( ${LIB_NAME}
