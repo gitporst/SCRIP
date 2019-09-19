@@ -1,6 +1,6 @@
 set (LIB_NAME SCRIP)
 
-find_package(OpenMP REQUIRED)
+#find_package(OpenMP REQUIRED)
 
 #find_package(MPI)
 #if (${MPI_Fortran_FOUND})

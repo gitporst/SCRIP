@@ -56,7 +56,7 @@
       use timers       ! module for timing
       use grids        ! module containing grid information
       use remap_vars   ! module containing remap information
-      use omp_lib
+      !use omp_lib
 
       implicit none
 
@@ -117,7 +117,7 @@
      &     ref_area             ! Area of cell as computed by direct 
                                 ! integration around its boundaries
 
-      call OMP_SET_DYNAMIC(.FALSE.)
+      !call OMP_SET_DYNAMIC(.FALSE.)
 
 !-----------------------------------------------------------------------
 !
