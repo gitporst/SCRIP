@@ -117,7 +117,7 @@
      &     ref_area             ! Area of cell as computed by direct 
                                 ! integration around its boundaries
 
-      !call OMP_SET_DYNAMIC(.FALSE.)
+C$OMP call OMP_SET_DYNAMIC(.FALSE.)
 
 !-----------------------------------------------------------------------
 !

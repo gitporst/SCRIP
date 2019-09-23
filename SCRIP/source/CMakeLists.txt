@@ -1,14 +1,14 @@
 set (LIB_NAME SCRIP)
 
-#find_package(OpenMP REQUIRED)
+# find_package(OpenMP REQUIRED)
 
-#find_package(MPI)
-#if (${MPI_Fortran_FOUND})
-#	file(GLOB sources ./*.F90 ./*.f mpi/*.F90)
-#	add_definitions("-DMPI")
-#else()
+find_package(MPI)
+if (${MPI_Fortran_FOUND})
+	file(GLOB sources ./*.F90 ./*.f mpi/*.F90)
+	add_definitions("-DMPI")
+else()
 	file(GLOB sources ./*.F90 ./*.f serial/*.F90)
-#endif()
+endif()
 add_library ( ${LIB_NAME} ${sources})
 target_include_directories(${LIB_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
